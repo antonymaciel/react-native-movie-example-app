@@ -8,8 +8,6 @@ class Api {
     return fetch(url, requestData)
     .then(response => Promise.resolve(response.json()))
     .catch(error => Promise.reject(error));
-     //.then(response => console.log(response, response.json(), typeof response))
-     //.catch(error => console.log(error, error.json(), typeof error))
   }
 
   static get(endpoint) {

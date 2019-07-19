@@ -1,14 +1,15 @@
 
 
-import Api from "../api/ApiExample"
+import Api from "../api/apiMovies"
 
 const action = () => {
-    Api.getExample('configuration/countries')
+    Api.getMovieReviews('429617')
     .then(response => 
         console.log('RESPONSE', response)
     )
     .catch(err => {
     console.log(err)
     })
-    return 'example'
-}
+    return 'hola'
+  }
+ 
