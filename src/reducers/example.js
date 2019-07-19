@@ -1,5 +1,5 @@
-import EXAMPLE_1 from '../constants/example'
-import EXAMPLE_2 from '../constants/example'
+import { EXAMPLE_1 } from '../constants/example'
+import { EXAMPLE_2 } from '../constants/example'
 
 const initialState = {
     example: false

@@ -6,7 +6,7 @@ class HomeContainer extends React.Component {
     super();
     this.state = { hello: 'hello' }
   }
-  
+
   render() {
     return <Home msg={this.state.hello} />;
 
