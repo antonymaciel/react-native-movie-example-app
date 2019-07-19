@@ -4,9 +4,9 @@ import HomeContainer from '../containers/HomeContainer';
 
 const stackNavigatorConfig =  {     
     //headerMode: 'none',
-    headerBackTitleVisible: false,
+    headerBackTitleVisible: true,
     navigationOptions: {
-       gesturesEnabled: false,
+       gesturesEnabled: true,
     },
     initialRouteName: "Home"
 }

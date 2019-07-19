@@ -1,11 +1,10 @@
 import React from "react";
-import Home from "../screens/Home";
+import Reviews from "../screens/Reviews";
 import styles from "../styles";
 
-class HomeContainer extends React.Component {
+class ReviewsContainer extends React.Component {
 
   static navigationOptions = {
-    title: 'MOVIES',
     headerStyle: styles.backroundColorApp,
     headerTitleStyle: styles.header,
   };
@@ -16,9 +15,9 @@ class HomeContainer extends React.Component {
   }
 
   render() {
-    return <Home msg={this.state.hello} />;
+    return <Reviews msg={this.state.hello} />;
 
   }
 }
 
-export default HomeContainer;
+export default ReviewsContainer;
