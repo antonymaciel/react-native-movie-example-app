@@ -2,7 +2,8 @@ import { EXAMPLE_1 } from '../constants/example'
 import { EXAMPLE_2 } from '../constants/example'
 
 const initialState = {
-    example: false
+    example1: false,
+    example2: false
 }
 
 
@@ -12,7 +13,7 @@ const example = (state = initialState, action) => {
             console.log(state);
             return {
                 example1: true,
-                example2: false
+                example2: true
             };
         case EXAMPLE_2:
                 console.log(state);
