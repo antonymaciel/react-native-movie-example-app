@@ -1,4 +1,4 @@
-import api from './ApiService';
+import api from './apiService';
 
 class ExampleApi {
   static getExample(endpoint) {
