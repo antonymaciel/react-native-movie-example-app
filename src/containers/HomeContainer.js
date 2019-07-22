@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { example } from "../actions/example"
+import { getMovies } from "../actions/movies"
 import Home from "../screens/Home";
 import styles from "../styles";
 //import PropTypes from 'prop-types';
@@ -15,25 +15,37 @@ class HomeContainer extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { hello: 'hello' }
+    this.state = {
+      page: 1
+    }
   }
 
   componentDidMount(){
-    this.props.exampleFunction();
+    this.props.getMovies();
   }
 
-  static getDerivedStateFromProps(props){
-    return  { hello: props.exampleVariable.example1}
+  onNewPage(){
+    if (this.state.page <= 1000) {
+      const newPage = this.state.page + 1;
+      this.props.getMovies(newPage);
+      this.setState({page: newPage});
+    }
   }
 
   render() {
-    return (<Home msg={this.state.hello ? 'true' : 'false'} />);
+    console.log('render home container', this.props);
+    return (
+      <Home 
+        movies={this.props.movies.movies} 
+        onNewPage={() => this.onNewPage()} 
+      />
+    );
 
   }
 
-  componentDidUpdate(props, state) {
+  //componentDidUpdate(props, state) {
     //console.log('compoennt', props.exampleVariable); NO DETECTA CAMBOIS DE PROPS
-  }
+  //}
 }
 
 /*
@@ -48,12 +60,16 @@ HomeContainer.propTypes = {
 };
 */
 
-const mapStateToProps = state => ({
-  exampleVariable: state.example,
-});
+const mapStateToProps = state => {
+  console.log('state on home container', state);
+  return {
+    movies: state.movies,
+  }
+}
+;
 
 const mapDispatchToProps = dispatch => ({
-  exampleFunction: () => dispatch(example()),
+  getMovies: (page) => dispatch(getMovies(page)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer);

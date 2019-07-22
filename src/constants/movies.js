@@ -1,0 +1,3 @@
+export const MOVIES_SUCCESS = 'MOVIES_SUCCESS';
+export const MOVIES_FAILD = 'MOVIES_FAILD';
+export const MOVIES_LOADING = 'MOVIES_LOADING';

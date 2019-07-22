@@ -2,22 +2,22 @@ import { API_URL } from '../constants/config';
 import { API_KEY } from '../constants/config';
 
 class Api {
-  static performRequest(endpoint, requestData = {}) {
-    const url = `${API_URL}/${endpoint}?api_key=${API_KEY}`;
-    console.log(url);
+  static performRequest(endpoint, requestData = {}, hasQueryString= false) {
+    const querySymbol= hasQueryString ? '&' : '?';
+    const url = `${API_URL}/${endpoint + querySymbol}api_key=${API_KEY}`;
     return fetch(url, requestData)
-    .then(response => Promise.resolve(response.json()))
-    .catch(error => Promise.reject(error));
+      .then(response => Promise.resolve(response.json()))
+      .catch(error => Promise.reject(error));
   }
 
-  static get(endpoint) {
+  static get(endpoint, hasQueryString) {
     const requestData = {
       method: 'get',
       headers: {
         'Content-Type': 'application/json',
       },
     };
-    return Api.performRequest(endpoint, requestData);
+    return Api.performRequest(endpoint, requestData, hasQueryString);
   }
 
   static post(endpoint, data, contentType) {
