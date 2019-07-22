@@ -1,8 +1,8 @@
 import api from './apiService';
 
 class MoviesApi {
-  static getMovies() {
-    return api.get('discover/movie');
+  static getMovies(page = 1) {
+    return api.get(`discover/movie?page=${page}`, true);
   }
 
   static getMovieDetails(movieId) {
