@@ -1,5 +1,5 @@
 import React from "react";
-import Reviews from "../screens/Reviews";
+import Reviews from "../screens/reviews";
 import styles from "../styles";
 
 class ReviewsContainer extends React.Component {

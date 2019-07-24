@@ -1,5 +1,5 @@
 import { createStackNavigator, createAppContainer } from "react-navigation";
-import HomeContainer from '../containers/HomeContainer';
+import HomeContainer from '../containers/homeContainer';
 
 
 const stackNavigatorConfig =  {     

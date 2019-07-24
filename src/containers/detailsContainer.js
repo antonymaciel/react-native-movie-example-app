@@ -1,5 +1,5 @@
 import React from "react";
-import Details from "../screens/Details";
+import Details from "../screens/details";
 import styles from "../styles";
 
 class DetailsContainer extends React.Component {
