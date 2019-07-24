@@ -1,7 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import Details from "../screens/details";
-import { getMovieDetails } from "../actions/details"
+import { getMovieDetails } from "../actions/details";
+import { movieReviewsFinish } from "../actions/reviews";
 
 class DetailsContainer extends React.Component {
 
@@ -17,8 +18,7 @@ class DetailsContainer extends React.Component {
   }
 
   static getDerivedStateFromProps(props){
-    const videoId = props.navigation.getParam('videoId', 'NO-ID');
-    console.log('state detail container', videoId);
+    const videoId = props.navigation.getParam('videoId');
     return {
       videoId
     }
@@ -32,7 +32,8 @@ class DetailsContainer extends React.Component {
   goToReviews = () => {
     const { videoId } = this.state;
     this.props.navigation.navigate('Reviews',{
-        videoId
+        videoId,
+        movieReviewsFinish: () => this.props.movieReviewsFinish()
     });
   }
 
@@ -54,6 +55,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   getMovieDetails: (idMovie) => dispatch(getMovieDetails(idMovie)),
+  movieReviewsFinish: () => dispatch(movieReviewsFinish()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(DetailsContainer);
