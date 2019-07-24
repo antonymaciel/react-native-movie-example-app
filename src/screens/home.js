@@ -1,10 +1,8 @@
 import React from "react";
 import { View, FlatList, RefreshControl } from "react-native"
 import styles from "../styles";
-import Movie from "../components/movie"
-
-
-const NUM_COLUMS= 2;
+import { NUM_COLUMS } from '../constants/other';
+import Movie from '../containers/movieComponentContainer'
 
 class Home extends React.Component {
     constructor(props){
@@ -28,7 +26,7 @@ class Home extends React.Component {
                     numColumns={NUM_COLUMS}
                     data={this.props.movies}
                     renderItem={({ item }) =>
-                      <Movie movie={item} numcolums={NUM_COLUMS}/>}
+                      <Movie movie={item} />}
                     keyExtractor={item => item.id.toString()}
                     ItemSeparatorComponent={() => <View />}
                     ListFooterComponent={() => <View />}

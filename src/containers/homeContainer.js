@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { getMovies } from "../actions/movies"
-import Home from "../screens/Home";
+import Home from "../screens/home";
 import styles from "../styles";
 //import PropTypes from 'prop-types';
 
@@ -33,7 +33,14 @@ class HomeContainer extends React.Component {
   }
 
   render() {
-    console.log('render home container', this.props);
+  /*  console.log('render home container', this.props);
+    let movies = [];
+    const movie = {title : 'hello', release_date: '2019', vote_average: '5.1' };
+    for (i=0;i <=100;i = i + 1){
+      movie.id =  i * 90;
+      movies[i] = movie;
+    }
+*/
     return (
       <Home 
         movies={this.props.movies.movies} 
