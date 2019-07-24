@@ -1,28 +1,28 @@
-import { MOVIES_SUCCESS, MOVIES_FAILD, MOVIES_LOADING } from '../constants/movies'
+import { DETAILS_SUCCESS, DETAILS_FAILD, DETAILS_LOADING } from '../constants/details'
 
 const initialState = {
-    movies: null,
+    movieDetails: null,
     loading: false,
     error: false
 }
 
 
-const movies = (state = initialState, action) => {
+const details = (state = initialState, action) => {
     switch(action.type){
-        case MOVIES_SUCCESS:
-            const movies = action.movies.results;
+        case DETAILS_SUCCESS:
+
             return {
-                movies: state.movies ? [ ...state.movies, ...movies] : movies ,
+                movieDetails: action.movieDetails,
                 loading: false, 
                 error: false
             };
-        case MOVIES_LOADING:
+        case DETAILS_LOADING:
             return { 
                 ...state, 
                 loading: true,
                 error: false
             };
-        case MOVIES_FAILD:
+        case DETAILS_FAILD:
             return { 
                 ...state, 
                 loading: false, 
@@ -33,4 +33,4 @@ const movies = (state = initialState, action) => {
     } 
 }
 
-export default movies;
+export default details;

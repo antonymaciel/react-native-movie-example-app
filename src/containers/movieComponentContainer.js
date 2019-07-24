@@ -8,23 +8,29 @@ class MovieComponentContainer extends React.Component {
         const { movie } = props;
         const [year, , ] = movie.release_date.split('-');
         const url = IMAGES_BASE_URL + movie.poster_path;
-        const { title, vote_average } = movie;
         this.state = {
             year,
-            url,
-            title,
-            vote_average 
+            url
         };
     }
 
+    onClickMovie = () => {
+        const { id } = this.props.movie;
+        this.props.navigation.navigate('Details',{
+            videoId: id
+        });
+    }
+
     render() {
-        const { year, url, title, vote_average } = this.state;
+        const { year, url } = this.state;
+        const { title, vote_average } = this.props.movie;
         return (
-            <MovieComponent 
+            <MovieComponent
                 year={year}
                 imageUrl={url}
                 title={title} 
                 vote_average={vote_average}
+                onClick={() => this.onClickMovie()}
             />
         );
     }

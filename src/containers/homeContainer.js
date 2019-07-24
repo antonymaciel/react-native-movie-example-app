@@ -25,7 +25,7 @@ class HomeContainer extends React.Component {
   }
 
   onNewPage(){
-    if (this.state.page <= 1000) {
+    if (this.state.page < 1000) {
       const newPage = this.state.page + 1;
       this.props.getMovies(newPage);
       this.setState({page: newPage});
@@ -42,8 +42,9 @@ class HomeContainer extends React.Component {
     }
 */
     return (
-      <Home 
-        movies={this.props.movies.movies} 
+      <Home
+        navigation = {this.props.navigation}
+        movies={this.props.movies.movies}
         onNewPage={() => this.onNewPage()} 
       />
     );
@@ -68,12 +69,10 @@ HomeContainer.propTypes = {
 */
 
 const mapStateToProps = state => {
-  console.log('state on home container', state);
   return {
     movies: state.movies,
   }
-}
-;
+};
 
 const mapDispatchToProps = dispatch => ({
   getMovies: (page) => dispatch(getMovies(page)),

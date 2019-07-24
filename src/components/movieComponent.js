@@ -10,7 +10,7 @@ class MovieComponent extends React.Component {
     render() {
         const { year, imageUrl, title, vote_average } = this.props;
         return (
-            <TouchableOpacity style={styles.movieContainer}>
+            <TouchableOpacity style={styles.movieContainer} onPress={() => this.props.onClick()}>
                 <Image style={styles.image} resizeMode="cover" source={{uri: imageUrl}}/> 
                 <View style={styles.averageContainer}>
                     <Text style={styles.averageText}>{vote_average}</Text>
