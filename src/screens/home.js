@@ -2,19 +2,18 @@ import React from "react";
 import { View, FlatList, RefreshControl } from "react-native"
 import styles from "../styles";
 import { NUM_COLUMS } from '../constants/other';
-import Movie from '../containers/movieComponentContainer'
+import MovieComponentContainer from '../containers/movieComponentContainer'
 
 class Home extends React.Component {
     constructor(props){
         super(props);
     }
 
-
     render() {
-        console.log('render home', this.props);
+        const { movies, navigation } = this.props;
         return (
             <View style={styles.pageContainer}>
-              { this.props.movies &&  
+              { movies &&  
                  <FlatList
                     keyboardShouldPersistTaps="always"
                     refreshControl={
@@ -24,9 +23,9 @@ class Home extends React.Component {
                       />
                     }
                     numColumns={NUM_COLUMS}
-                    data={this.props.movies}
+                    data={movies}
                     renderItem={({ item }) =>
-                      <Movie movie={item} />}
+                      <MovieComponentContainer navigation={navigation} movie={item} />}
                     keyExtractor={item => item.id.toString()}
                     ItemSeparatorComponent={() => <View />}
                     ListFooterComponent={() => <View />}
