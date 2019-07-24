@@ -1,5 +1,7 @@
 import { createStackNavigator, createAppContainer } from "react-navigation";
 import HomeContainer from '../containers/homeContainer';
+import DetailsContainer from '../containers/detailsContainer';
+import ReviewsContainer from '../containers/reviewsContainer';
 
 
 const stackNavigatorConfig =  {     
@@ -17,6 +19,14 @@ const Stack = createStackNavigator(
         Home: {
             screen: HomeContainer, 
             title: 'Home'
+        },
+        Details: {
+            screen: DetailsContainer,
+            title: 'Details'
+        },
+        Reviews: {
+            screen: ReviewsContainer,
+            title: 'Reviews'
         }
     },
     stackNavigatorConfig

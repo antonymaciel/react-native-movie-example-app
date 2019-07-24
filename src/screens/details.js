@@ -1,9 +1,12 @@
 import React from "react";
-import { View, Text } from "react-native"
+import { View, Button, Text } from "react-native"
 import styles from "../styles";
 
+
+
 function Details(props) {
-    return (<View style={styles.pageContainer}><Text>{props.msg}</Text></View>);
+    console.log('details', props.details);
+    return (<View style={styles.pageContainer}><Button onPress={() => props.goToReviews()} title={'test'}/></View>);
 }
 
 export default Details;

@@ -9,8 +9,8 @@ class MoviesApi {
     return api.get('movie/' + movieId);
   }
 
-  static getMovieReviews(movieId) {
-    return api.get('movie/' + movieId + '/reviews');
+  static getMovieReviews(movieId, page = 1) {
+    return api.get('movie/' + movieId + `/reviews?page=${page}`, true);
   }
   
 }
