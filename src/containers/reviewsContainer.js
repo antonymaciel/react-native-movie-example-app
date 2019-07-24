@@ -1,12 +1,25 @@
 import React from "react";
+import { Button } from "react-native";
 import { connect } from "react-redux";
 import Reviews from "../screens/reviews";
 import { getMovieReviews, movieReviewsFinish } from "../actions/reviews"
 
 class ReviewsContainer extends React.Component {
 
-  static navigationOptions = {
-    headerMode: 'none',
+  static navigationOptions = ({ navigation }) => {
+    return {
+      headerLeft: (
+        <Button
+          onPress={() => {
+            const movieReviewsFinish = navigation.getParam('movieReviewsFinish');
+            movieReviewsFinish();
+            navigation.goBack();
+          }}
+          title="Go Back"
+          color="blue"
+        />
+      ),
+    };
   };
 
   constructor(props) {
@@ -17,7 +30,7 @@ class ReviewsContainer extends React.Component {
   }
 
   static getDerivedStateFromProps(props) {
-    const videoId = props.navigation.getParam('videoId', 'NO-ID');
+    const videoId = props.navigation.getParam('videoId');
     return {
       videoId
     }
@@ -30,11 +43,6 @@ class ReviewsContainer extends React.Component {
       this.props.getMovieReviews(videoId, newPage);
       this.setState({page: newPage});
     }
-  }
-
-  onBackPress(){
-    this.props.movieReviewsFinish()
-    this.props.navigation.goBack()
   }
 
   componentDidMount(){
