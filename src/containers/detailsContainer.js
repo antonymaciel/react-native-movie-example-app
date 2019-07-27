@@ -1,25 +1,33 @@
 import React from "react";
+import  { Button } from "react-native";
 import { connect } from "react-redux";
 import Details from "../screens/details";
 import { getMovieDetails } from "../actions/details";
 import { movieReviewsFinish } from "../actions/reviews";
+import styles from "../styles/details";
 
 class DetailsContainer extends React.Component {
 
-  static navigationOptions = {
+  static navigationOptions = ({ navigation }) => {
+    return {
     headerMode: 'none',
-  };
+    headerTransparent: true,
+    headerStyle: styles.headerStyle,
+    headerLeft: (
+      <Button
+        onPress={() => {
+          navigation.goBack();
+        }}
+        title="Go Back"
+        color="blue"
+      />
+    ),
+  }}
 
   constructor(props) {
     super(props);
-    this.state = {
-      videoId: null
-    }
-  }
-
-  static getDerivedStateFromProps(props){
     const videoId = props.navigation.getParam('videoId');
-    return {
+    this.state = {
       videoId
     }
   }
@@ -33,13 +41,14 @@ class DetailsContainer extends React.Component {
     const { videoId } = this.state;
     this.props.navigation.navigate('Reviews',{
         videoId,
-        movieReviewsFinish: () => this.props.movieReviewsFinish()
+        movieReviewsFinish: () => this.props.movieReviewsFinish(),
+        posterPath: this.props.movieDetails.movieDetails.poster_path
     });
   }
 
   render() {
     return ( 
-      <Details 
+      <Details
         details={this.props.movieDetails}
         goToReviews={() => this.goToReviews()}
       />

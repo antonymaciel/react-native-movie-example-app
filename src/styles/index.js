@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
         textAlign:'left'
     },
     pageContainer: {
-        backgroundColor: '#f8f8f8',
+        backgroundColor: '#ffffff',
         flex: 1
     }
 });
