@@ -1,8 +1,11 @@
 import React from "react";
 import { Button } from "react-native";
 import { connect } from "react-redux";
+import { IMAGES_BASE_URL } from "../constants/config";
 import Reviews from "../screens/reviews";
-import { getMovieReviews, movieReviewsFinish } from "../actions/reviews"
+import styles from "../styles";
+import { getMovieReviews, movieReviewsFinish } from "../actions/reviews";
+
 
 class ReviewsContainer extends React.Component {
 
@@ -19,20 +22,19 @@ class ReviewsContainer extends React.Component {
           color="blue"
         />
       ),
+      headerStyle: styles.backroundColorApp,
+      headerTitleStyle: styles.header,
     };
   };
 
   constructor(props) {
     super(props);
-    this.state = {
-      page: 1
-    }
-  }
-
-  static getDerivedStateFromProps(props) {
     const videoId = props.navigation.getParam('videoId');
-    return {
-      videoId
+    const posterUrl = IMAGES_BASE_URL + props.navigation.getParam('posterPath');
+    this.state = {
+      page: 1,
+      videoId,
+      posterUrl
     }
   }
 
@@ -51,8 +53,13 @@ class ReviewsContainer extends React.Component {
   }
 
   render() {
-    return <Reviews reviews={this.props.movieReviews} />;
-
+    return (
+      <Reviews 
+        reviews={this.props.movieReviews}
+        posterUrl={this.state.posterUrl}
+        onNewPage={() => this.onNewPage()}
+      />
+    );
   }
 }
 

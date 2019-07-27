@@ -1,4 +1,5 @@
 import React from "react";
+import {View , Button} from "react-native"
 import { connect } from "react-redux";
 import { getMovies } from "../actions/movies"
 import Home from "../screens/home";
@@ -32,29 +33,25 @@ class HomeContainer extends React.Component {
     }
   }
 
+  goToReviews = () => {
+    const { videoId } = this.state;
+    this.props.navigation.navigate('DetailsTest');
+  }
+
   render() {
-  /*  console.log('render home container', this.props);
-    let movies = [];
-    const movie = {title : 'hello', release_date: '2019', vote_average: '5.1' };
-    for (i=0;i <=100;i = i + 1){
-      movie.id =  i * 90;
-      movies[i] = movie;
-    }
-*/
     return (
-      <Home
-        navigation = {this.props.navigation}
-        movies={this.props.movies.movies}
-        onNewPage={() => this.onNewPage()} 
-      />
+        <Home
+          navigation = {this.props.navigation}
+          movies={this.props.movies.movies}
+          onNewPage={() => this.onNewPage()} 
+        />
     );
 
   }
 
-  //componentDidUpdate(props, state) {
-    //console.log('compoennt', props.exampleVariable); NO DETECTA CAMBOIS DE PROPS
-  //}
 }
+
+//  <Button onPress={() => this.goToReviews()} title={'Show Reviews'}/>
 
 /*
 HomeContainer.propTypes = {
