@@ -38,7 +38,8 @@ const styles = StyleSheet.create({
     titleText: {
         color: 'white',
         fontSize: 17,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        textTransform: 'uppercase'
     },
     date: {
         color: 'white'
