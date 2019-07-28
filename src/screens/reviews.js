@@ -20,12 +20,6 @@ class Reviews extends React.Component {
                     <FlatList
                         style={styles.reviewList}
                         keyboardShouldPersistTaps="always"
-                        refreshControl={
-                        <RefreshControl
-                            refreshing={false}
-                            onRefresh={() => console.log('pending')}
-                        />
-                        }
                         data={results}
                         renderItem={({ item }) =>
                             <ReviewComponent 
