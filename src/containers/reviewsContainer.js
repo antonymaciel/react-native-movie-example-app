@@ -5,10 +5,10 @@ import { IMAGES_BASE_URL } from "../constants/config";
 import Reviews from "../screens/reviews";
 import styles from "../styles";
 import { getMovieReviews, movieReviewsFinish } from "../actions/reviews";
-
+import Loading from "../components/loading"
+import Error from "../components/error"
 
 class ReviewsContainer extends React.Component {
-
   static navigationOptions = ({ navigation }) => {
     return {
       headerLeft: (
@@ -29,13 +29,20 @@ class ReviewsContainer extends React.Component {
 
   constructor(props) {
     super(props);
-    const videoId = props.navigation.getParam('videoId');
-    const posterUrl = IMAGES_BASE_URL + props.navigation.getParam('posterPath');
     this.state = {
       page: 1,
+      videoId: null,
+      posterUrl: null
+    }
+  }
+
+  static getDerivedStateFromProps(props){
+    const videoId = props.navigation.getParam('videoId');
+    const posterUrl = IMAGES_BASE_URL + props.navigation.getParam('posterPath');
+    return {
       videoId,
       posterUrl
-    }
+    };
   }
 
   onNewPage(){
@@ -53,13 +60,23 @@ class ReviewsContainer extends React.Component {
   }
 
   render() {
-    return (
-      <Reviews 
-        reviews={this.props.movieReviews}
-        posterUrl={this.state.posterUrl}
-        onNewPage={() => this.onNewPage()}
-      />
-    );
+    const { reviews, loading } = this.props.movieReviews;
+    if (reviews) {
+      const { posterUrl } = this.state;
+      const { total_results, results } = reviews;
+      return (
+        <Reviews 
+          total_results={total_results}
+          results={results}
+          posterUrl={posterUrl}
+          onNewPage={() => this.onNewPage()}
+        />
+      );
+    } else if (loading) {
+      return(<Loading />);
+    } else {
+      return(<Error />);
+    }
   }
 }
 
