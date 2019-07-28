@@ -2,8 +2,7 @@ import React from "react";
 import  { Button } from "react-native";
 import { connect } from "react-redux";
 import Details from "../screens/details";
-import { getMovieDetails } from "../actions/details";
-import { movieReviewsFinish } from "../actions/reviews";
+import { getMovieDetails, movieDetailsFinish } from "../actions/details";
 import styles from "../styles/details";
 import Loading from "../components/loading"
 import Error from "../components/error"
@@ -96,6 +95,11 @@ class DetailsContainer extends React.Component {
       return <Error />
     }
   }
+
+  componentWillUnmount(){
+    this.props.movieDetailsFinish();
+  }
+
 }
 
 const mapStateToProps = state => {
@@ -106,7 +110,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   getMovieDetails: (idMovie) => dispatch(getMovieDetails(idMovie)),
-  movieReviewsFinish: () => dispatch(movieReviewsFinish()),
+  movieDetailsFinish: () => dispatch(movieDetailsFinish()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(DetailsContainer);

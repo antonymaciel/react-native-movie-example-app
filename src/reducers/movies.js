@@ -2,6 +2,7 @@ import { MOVIES_SUCCESS, MOVIES_FAILD, MOVIES_LOADING } from '../constants/movie
 
 const initialState = {
     movies: null,
+    totalPages: null,
     loading: false,
     error: false
 }
@@ -12,8 +13,9 @@ const movies = (state = initialState, action) => {
         case MOVIES_SUCCESS:
             const movies = action.movies.results;
             return {
-                movies: state.movies ? [ ...state.movies, ...movies] : movies ,
+                movies: state.movies ? [ ...state.movies, ...movies] : movies,
                 loading: false, 
+                totalPages: action.movies.total_pages,
                 error: false
             };
         case MOVIES_LOADING:

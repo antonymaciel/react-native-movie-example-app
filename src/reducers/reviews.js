@@ -10,12 +10,10 @@ const initialState = {
 const reviews = (state = initialState, action) => {
     switch(action.type){
         case REVIEWS_SUCCESS:
-                const reviews = state.reviews ? 
-                    { ...state.reviews, results: { ...state.reviews.results, ...action.reviews.results}} 
-                : 
-                    action.reviews;
             return {
-                reviews,
+                reviews: state.reviews ? [...state.reviews.results, ...action.reviews.results] : action.reviews.results,
+                totalReviews: action.reviews.total_pages,
+                totalPages: action.reviews.total_results,
                 loading: false, 
                 error: false
             };
