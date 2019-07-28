@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a movieComponent using Snapshots 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "marginLeft": 10,
+      "marginTop": 10,
+      "opacity": 1,
+    }
+  }
+>
+  <Image
+    resizeMode="cover"
+    source={
+      Object {
+        "uri": "https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg",
+      }
+    }
+    style={
+      Object {
+        "backgroundColor": "black",
+        "borderRadius": 15,
+        "height": 620.5,
+        "width": 360,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "backgroundColor": "orange",
+        "borderRadius": 100,
+        "marginRight": 25,
+        "marginTop": 25,
+        "padding": 7,
+        "position": "absolute",
+        "right": 0,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "white",
+          "fontWeight": "bold",
+        }
+      }
+    >
+      9.1
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "marginBottom": 20,
+        "marginLeft": 20,
+        "position": "absolute",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "white",
+        }
+      }
+    >
+      2019
+    </Text>
+    <Text
+      style={
+        Object {
+          "color": "white",
+          "fontSize": 17,
+          "fontWeight": "bold",
+          "textTransform": "uppercase",
+        }
+      }
+    >
+      Spiderman
+    </Text>
+  </View>
+</View>
+`;
