@@ -10,52 +10,46 @@ class Reviews extends React.Component {
     }
 
     render() {
-        const { reviews } = this.props.reviews;
-        if (reviews) {
-            return (
-                <View style={appStyles.pageContainer}>
-                    <View style={styles.headerContainer}>
-                        <Text style={styles.title}>Reviews ({reviews.total_results})</Text>
-                        <Image style={styles.image} resizeMode='contain' source={{uri: this.props.posterUrl}} />
-                    </View>
-                
-                        <FlatList
-                            style={styles.reviewList}
-                            keyboardShouldPersistTaps="always"
-                            refreshControl={
-                            <RefreshControl
-                                refreshing={false}
-                                onRefresh={() => console.log('pending')}
-                            />
-                            }
-                            data={reviews.results}
-                            renderItem={({ item }) =>
-                                <ReviewComponent 
-                                    author={item.author}
-                                    content={item.content}
-                                    url={item.url}
-                                />
-                            }
-                            keyExtractor={item => item.id.toString()}
-                            ItemSeparatorComponent={() => <View />}
-                            ListFooterComponent={() => <View />}
-                            ListHeaderComponent={() => <View />}
-                            onEndReachedThreshold={0.2}
-                            onEndReached={() => {
-                            if (!this.onEndReachedCalledDuringMomentum) {
-                                this.props.onNewPage();
-                                this.onEndReachedCalledDuringMomentum = true;
-                            }
-                            }}
-                            onMomentumScrollBegin={() => { this.onEndReachedCalledDuringMomentum = false; }}
-                        />
-                   
+        const { total_results, posterUrl, results, onNewPage } = this.props;
+        return (
+            <View style={appStyles.pageContainer}>
+                <View style={styles.headerContainer}>
+                    <Text style={styles.title}>Reviews ({total_results})</Text>
+                    <Image style={styles.image} resizeMode='contain' source={{uri: posterUrl}} />
                 </View>
-            );
-        } else 
-            return <Text>Loading ...</Text>;
+                    <FlatList
+                        style={styles.reviewList}
+                        keyboardShouldPersistTaps="always"
+                        refreshControl={
+                        <RefreshControl
+                            refreshing={false}
+                            onRefresh={() => console.log('pending')}
+                        />
+                        }
+                        data={results}
+                        renderItem={({ item }) =>
+                            <ReviewComponent 
+                                author={item.author}
+                                content={item.content}
+                                url={item.url}
+                            />
+                        }
+                        keyExtractor={item => item.id.toString()}
+                        ItemSeparatorComponent={() => <View />}
+                        ListFooterComponent={() => <View />}
+                        ListHeaderComponent={() => <View />}
+                        onEndReachedThreshold={0.2}
+                        onEndReached={() => {
+                        if (!this.onEndReachedCalledDuringMomentum) {
+                            onNewPage();
+                            this.onEndReachedCalledDuringMomentum = true;
+                        }
+                        }}
+                        onMomentumScrollBegin={() => { this.onEndReachedCalledDuringMomentum = false; }}
+                    />
+            </View>
+        );
     }
-    
-  }
+}
 
 export default Reviews;

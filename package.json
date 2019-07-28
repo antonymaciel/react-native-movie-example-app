@@ -6,7 +6,14 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "test": "jest"
+  },
+  "jest": {
+    "preset": "jest-react-native",
+    "setupFiles": [
+      "./config/jest/globalFetch.js"
+    ]
   },
   "dependencies": {
     "expo": "^31.0.2",
@@ -19,6 +26,14 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
-    "babel-preset-expo": "^5.0.0"
+    "babel-jest": "^24.8.0",
+    "babel-preset-expo": "^5.0.0",
+    "babel-preset-react-native": "^4.0.1",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "jest": "^24.8.0",
+    "jest-react-native": "^18.0.0",
+    "react-dom": "^16.8.6",
+    "react-test-renderer": "^16.8.6"
   }
 }
