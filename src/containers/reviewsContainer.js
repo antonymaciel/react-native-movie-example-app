@@ -14,8 +14,6 @@ class ReviewsContainer extends React.Component {
       headerLeft: (
         <Button
           onPress={() => {
-            const movieReviewsFinish = navigation.getParam('movieReviewsFinish');
-            movieReviewsFinish();
             navigation.goBack();
           }}
           title="Go Back"
@@ -47,7 +45,8 @@ class ReviewsContainer extends React.Component {
 
   onNewPage(){
     const { videoId, page } = this.state;
-    if (page < this.props.movieReviews.reviews.total_pages) {
+    const { totalPages } = this.props.movieReviews;
+    if (page < totalPages) {
       const newPage = page + 1;
       this.props.getMovieReviews(videoId, newPage);
       this.setState({page: newPage});
@@ -60,14 +59,13 @@ class ReviewsContainer extends React.Component {
   }
 
   render() {
-    const { reviews, loading } = this.props.movieReviews;
-    if (reviews) {
+    const { reviews, totalReviews, loading } = this.props.movieReviews;
+    if (reviews !== null) {
       const { posterUrl } = this.state;
-      const { total_results, results } = reviews;
       return (
         <Reviews 
-          total_results={total_results}
-          results={results}
+          total_results={totalReviews}
+          results={reviews}
           posterUrl={posterUrl}
           onNewPage={() => this.onNewPage()}
         />
@@ -78,6 +76,11 @@ class ReviewsContainer extends React.Component {
       return(<Error />);
     }
   }
+
+  componentWillUnmount(){
+    this.props.movieReviewsFinish();
+  }
+  
 }
 
 const mapStateToProps = state => {

@@ -1,4 +1,4 @@
-import { DETAILS_SUCCESS, DETAILS_FAILD, DETAILS_LOADING } from '../constants/details'
+import { DETAILS_SUCCESS, DETAILS_FAILD, DETAILS_LOADING, DETAILS_FINISH } from '../constants/details'
 
 const initialState = {
     movieDetails: null,
@@ -28,6 +28,8 @@ const details = (state = initialState, action) => {
                 loading: false, 
                 error: true
             };
+        case DETAILS_FINISH:
+            return initialState;   
         default:
                 return state;
     } 
