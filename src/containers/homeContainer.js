@@ -4,6 +4,9 @@ import { connect } from "react-redux";
 import { getMovies } from "../actions/movies"
 import Home from "../screens/home";
 import styles from "../styles";
+import Loading from "../components/loading"
+import Error from "../components/error"
+
 //import PropTypes from 'prop-types';
 
 class HomeContainer extends React.Component {
@@ -39,14 +42,20 @@ class HomeContainer extends React.Component {
   }
 
   render() {
-    return (
+    const { movies, loading } = this.props.movies;
+    if (movies) {
+      return(
         <Home
           navigation = {this.props.navigation}
-          movies={this.props.movies.movies}
+          movies={movies}
           onNewPage={() => this.onNewPage()} 
         />
-    );
-
+      )
+    } else if(loading) {
+      return <Loading />;
+    } else {
+      return <Error />;
+    };
   }
 
 }
