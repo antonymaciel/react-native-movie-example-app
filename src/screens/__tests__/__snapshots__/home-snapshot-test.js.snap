@@ -1,0 +1,385 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders home screen using Snapshots 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#ffffff",
+      "flex": 1,
+    }
+  }
+>
+  <RCTScrollView
+    ItemSeparatorComponent={[Function]}
+    ListFooterComponent={[Function]}
+    ListHeaderComponent={[Function]}
+    data={
+      Array [
+        Object {
+          "id": 1,
+          "poster_path": "/kqjL17yufvn9OVLyXYpvtyrFfak.jpg",
+          "release_date": "2016-5-14",
+          "title": "XMan",
+          "vote_average": 7.8,
+        },
+        Object {
+          "id": 2,
+          "imageUrl": "/kqjL17yufvn9OVLyXYpvtyrFfak.jpg",
+          "release_date": "2015-5-9",
+          "title": "Superman",
+          "vote_average": 0.9,
+          "year": "2019",
+        },
+        Object {
+          "id": 3,
+          "imageUrl": "/kqjL17yufvn9OVLyXYpvtyrFfak.jpg",
+          "release_date": "2005-5-27",
+          "title": "Spiderman",
+          "vote_average": 8,
+          "year": "2019",
+        },
+      ]
+    }
+    disableVirtualization={false}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    horizontal={false}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    keyboardShouldPersistTaps="always"
+    maxToRenderPerBatch={10}
+    numColumns={2}
+    onContentSizeChange={[Function]}
+    onEndReached={[Function]}
+    onEndReachedThreshold={0.2}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    refreshControl={
+      <RefreshControlMock
+        onRefresh={[Function]}
+        refreshing={false}
+      />
+    }
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    updateCellsBatchingPeriod={50}
+    viewabilityConfigCallbackPairs={Array []}
+    windowSize={21}
+  >
+    <View>
+      <View
+        onLayout={[Function]}
+      >
+        <View />
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "marginLeft": 10,
+                "marginTop": 10,
+                "opacity": 1,
+              }
+            }
+          >
+            <Image
+              resizeMode="cover"
+              source={
+                Object {
+                  "uri": "https://image.tmdb.org/t/p/w300/kqjL17yufvn9OVLyXYpvtyrFfak.jpg",
+                }
+              }
+              style={
+                Object {
+                  "backgroundColor": "black",
+                  "borderRadius": 15,
+                  "height": 620.5,
+                  "width": 360,
+                }
+              }
+            />
+            <View
+              style={
+                Object {
+                  "backgroundColor": "orange",
+                  "borderRadius": 100,
+                  "marginRight": 25,
+                  "marginTop": 25,
+                  "padding": 7,
+                  "position": "absolute",
+                  "right": 0,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "white",
+                    "fontWeight": "bold",
+                  }
+                }
+              >
+                7.8
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "bottom": 0,
+                  "marginBottom": 20,
+                  "marginLeft": 20,
+                  "position": "absolute",
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "white",
+                  }
+                }
+              >
+                2016
+              </Text>
+              <Text
+                style={
+                  Object {
+                    "color": "white",
+                    "fontSize": 17,
+                    "fontWeight": "bold",
+                    "textTransform": "uppercase",
+                  }
+                }
+              >
+                XMan
+              </Text>
+            </View>
+          </View>
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "marginLeft": 10,
+                "marginTop": 10,
+                "opacity": 1,
+              }
+            }
+          >
+            <Image
+              resizeMode="cover"
+              source={
+                Object {
+                  "uri": "https://image.tmdb.org/t/p/w300undefined",
+                }
+              }
+              style={
+                Object {
+                  "backgroundColor": "black",
+                  "borderRadius": 15,
+                  "height": 620.5,
+                  "width": 360,
+                }
+              }
+            />
+            <View
+              style={
+                Object {
+                  "backgroundColor": "orange",
+                  "borderRadius": 100,
+                  "marginRight": 25,
+                  "marginTop": 25,
+                  "padding": 7,
+                  "position": "absolute",
+                  "right": 0,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "white",
+                    "fontWeight": "bold",
+                  }
+                }
+              >
+                0.9
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "bottom": 0,
+                  "marginBottom": 20,
+                  "marginLeft": 20,
+                  "position": "absolute",
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "white",
+                  }
+                }
+              >
+                2015
+              </Text>
+              <Text
+                style={
+                  Object {
+                    "color": "white",
+                    "fontSize": 17,
+                    "fontWeight": "bold",
+                    "textTransform": "uppercase",
+                  }
+                }
+              >
+                Superman
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View />
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "marginLeft": 10,
+                "marginTop": 10,
+                "opacity": 1,
+              }
+            }
+          >
+            <Image
+              resizeMode="cover"
+              source={
+                Object {
+                  "uri": "https://image.tmdb.org/t/p/w300undefined",
+                }
+              }
+              style={
+                Object {
+                  "backgroundColor": "black",
+                  "borderRadius": 15,
+                  "height": 620.5,
+                  "width": 360,
+                }
+              }
+            />
+            <View
+              style={
+                Object {
+                  "backgroundColor": "orange",
+                  "borderRadius": 100,
+                  "marginRight": 25,
+                  "marginTop": 25,
+                  "padding": 7,
+                  "position": "absolute",
+                  "right": 0,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "white",
+                    "fontWeight": "bold",
+                  }
+                }
+              >
+                8
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "bottom": 0,
+                  "marginBottom": 20,
+                  "marginLeft": 20,
+                  "position": "absolute",
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "white",
+                  }
+                }
+              >
+                2005
+              </Text>
+              <Text
+                style={
+                  Object {
+                    "color": "white",
+                    "fontSize": 17,
+                    "fontWeight": "bold",
+                    "textTransform": "uppercase",
+                  }
+                }
+              >
+                Spiderman
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+      >
+        <View />
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;

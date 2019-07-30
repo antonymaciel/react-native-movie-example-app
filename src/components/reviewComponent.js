@@ -20,7 +20,6 @@ class ReviewComponent extends React.Component {
         const { collapsed } = this.state;
         content = content.replace(/(?:\r\n|\r|\n)/g, '');
         const numberOfLines= collapsed ? 5 : 15;
-
         return (
             <View style={styles.container}>
                 <Text style={styles.author}>{author}</Text>

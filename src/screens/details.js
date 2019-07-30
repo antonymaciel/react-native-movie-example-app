@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Button, Image, Text} from "react-native";
+import { View, Button, Image, Text } from "react-native";
 import { Rating } from 'react-native-elements';
 import styles from "../styles/details";
 import appStyles from "../styles";
@@ -32,9 +32,6 @@ class Details extends React.Component {
                                 startingValue={vote_average / 2}
                                 count={1}
                                 ratingColor='red'
-                                //ratingBackgroundColor='gray'
-                                //type='custom'
-                                //ratingTextColor='red'
                             />
                         </View>
                 </View>
