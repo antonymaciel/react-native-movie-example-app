@@ -12,7 +12,8 @@
   "jest": {
     "preset": "jest-react-native",
     "setupFiles": [
-      "./config/jest/globalFetch.js"
+      "./config/jest/globalFetch.js",
+      "./config/jest/ScrollViewMock.js"
     ]
   },
   "dependencies": {

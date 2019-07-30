@@ -2,7 +2,7 @@ import React from "react";
 import { View, FlatList, Image, Text, RefreshControl } from "react-native"
 import appStyles from "../styles";
 import styles from "../styles/reviews";
-import ReviewComponent from  "../components/reviewComponet"
+import ReviewComponent from  "../components/reviewComponent"
 
 class Reviews extends React.Component {
     constructor(props){
