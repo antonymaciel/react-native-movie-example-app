@@ -2,6 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { reviews, movie } from '../../../config/jest/mockData';
 import Reviews from '../reviews';
+jest.mock('../../components/reviewComponent', () => 'ReviewComponent');
 
 
 it('renders home screen using Snapshots', () => {

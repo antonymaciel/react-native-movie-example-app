@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders details container using Snapshots 1`] = `
+<Details
+  goToReviews={[Function]}
+  overview="Amazing movie"
+  title="Spiderman"
+  urlbackdropImage="https://image.tmdb.org/t/p/w300/kqjL17yufvn9OVLyXYpvtyrFfak.jpg"
+  urlposterImage="https://image.tmdb.org/t/p/w300/kqjL17yufvn9OVLyXYpvtyrFfak.jpg"
+  vote_average="9.1"
+  vote_count="1200"
+/>
+`;
+
+exports[`renders details container using Snapshots 2`] = `
+<Text>
+  Loading...
+</Text>
+`;
+
+exports[`renders details container using Snapshots 3`] = `
+<Text>
+  Error...
+</Text>
+`;
