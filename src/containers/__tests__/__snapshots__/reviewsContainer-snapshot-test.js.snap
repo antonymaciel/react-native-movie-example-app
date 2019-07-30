@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders reviews container using Snapshots 1`] = `
+<Reviews
+  onNewPage={[Function]}
+  posterUrl="https://image.tmdb.org/t/p/w300undefined"
+  results={
+    Array [
+      Object {
+        "author": "Antony Maciel",
+        "content": "Great Movie!!!",
+        "id": 1,
+        "url": "https://www.themoviedb.org/review/5d2ddc7d6a300b0011a469df",
+      },
+      Object {
+        "author": "Antony Maciel",
+        "content": "Great Movie!, always has amazing content 
+ I love this movie",
+        "id": 2,
+        "url": "https://www.themoviedb.org/review/5d2ddc7d6a300b0011a469df",
+      },
+      Object {
+        "author": "Antony Maciel",
+        "content": "&^%$#@!",
+        "id": 3,
+        "url": "https://www.themoviedb.org/review/5d2ddc7d6a300b0011a469df",
+      },
+    ]
+  }
+  total_results={3}
+/>
+`;
+
+exports[`renders reviews container using Snapshots 2`] = `
+<Text>
+  Loading...
+</Text>
+`;
+
+exports[`renders reviews container using Snapshots 3`] = `
+<Text>
+  Error...
+</Text>
+`;

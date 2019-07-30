@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders movie container success using Snapshots 1`] = `
+<Movie
+  imageUrl="https://image.tmdb.org/t/p/w300/kqjL17yufvn9OVLyXYpvtyrFfak.jpg"
+  onClick={[Function]}
+  title="Spiderman"
+  vote_average="9.1"
+  year="2016"
+/>
+`;

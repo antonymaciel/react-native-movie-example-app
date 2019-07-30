@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders home container using Snapshots 1`] = `
+<Home
+  movies={
+    Array [
+      Object {
+        "id": 1,
+        "poster_path": "/kqjL17yufvn9OVLyXYpvtyrFfak.jpg",
+        "release_date": "2016-5-14",
+        "title": "XMan",
+        "vote_average": 7.8,
+      },
+      Object {
+        "id": 2,
+        "imageUrl": "/kqjL17yufvn9OVLyXYpvtyrFfak.jpg",
+        "release_date": "2015-5-9",
+        "title": "Superman",
+        "vote_average": 0.9,
+        "year": "2019",
+      },
+      Object {
+        "id": 3,
+        "imageUrl": "/kqjL17yufvn9OVLyXYpvtyrFfak.jpg",
+        "release_date": "2005-5-27",
+        "title": "Spiderman",
+        "vote_average": 8,
+        "year": "2019",
+      },
+    ]
+  }
+  navigation={
+    Object {
+      "getParam": [MockFunction],
+      "navigate": [MockFunction],
+    }
+  }
+  onNewPage={[Function]}
+/>
+`;
+
+exports[`renders home container using Snapshots 2`] = `
+<Text>
+  Loading...
+</Text>
+`;
+
+exports[`renders home container using Snapshots 3`] = `
+<Text>
+  Error...
+</Text>
+`;
