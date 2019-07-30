@@ -114,198 +114,34 @@ exports[`renders home screen using Snapshots 1`] = `
         onLayout={[Function]}
         style={null}
       >
-        <View
-          style={
-            Object {
-              "marginBottom": 20,
-              "marginHorizontal": 20,
-            }
-          }
-        >
-          <Text
-            style={
-              Object {
-                "fontSize": 20,
-              }
-            }
-          >
-            Antony Maciel
-          </Text>
-          <View
-            accessible={true}
-            isTVSelectable={true}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "opacity": 1,
-              }
-            }
-          >
-            <Text
-              numberOfLines={5}
-              style={
-                Object {
-                  "color": "#696969",
-                  "fontSize": 15,
-                  "fontWeight": "500",
-                  "textDecorationLine": "none",
-                }
-              }
-            >
-              Great Movie!!!
-            </Text>
-            <Text
-              style={
-                Object {
-                  "color": "#E91E63",
-                  "textAlign": "right",
-                  "textDecorationLine": "underline",
-                }
-              }
-            >
-              see 
-              more
-              ...
-            </Text>
-          </View>
-        </View>
+        <ReviewComponent
+          author="Antony Maciel"
+          content="Great Movie!!!"
+          url="https://www.themoviedb.org/review/5d2ddc7d6a300b0011a469df"
+        />
         <View />
       </View>
       <View
         onLayout={[Function]}
         style={null}
       >
-        <View
-          style={
-            Object {
-              "marginBottom": 20,
-              "marginHorizontal": 20,
-            }
-          }
-        >
-          <Text
-            style={
-              Object {
-                "fontSize": 20,
-              }
-            }
-          >
-            Antony Maciel
-          </Text>
-          <View
-            accessible={true}
-            isTVSelectable={true}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "opacity": 1,
-              }
-            }
-          >
-            <Text
-              numberOfLines={5}
-              style={
-                Object {
-                  "color": "#696969",
-                  "fontSize": 15,
-                  "fontWeight": "500",
-                  "textDecorationLine": "none",
-                }
-              }
-            >
-              Great Movie!, always has amazing content  I love this movie
-            </Text>
-            <Text
-              style={
-                Object {
-                  "color": "#E91E63",
-                  "textAlign": "right",
-                  "textDecorationLine": "underline",
-                }
-              }
-            >
-              see 
-              more
-              ...
-            </Text>
-          </View>
-        </View>
+        <ReviewComponent
+          author="Antony Maciel"
+          content="Great Movie!, always has amazing content 
+ I love this movie"
+          url="https://www.themoviedb.org/review/5d2ddc7d6a300b0011a469df"
+        />
         <View />
       </View>
       <View
         onLayout={[Function]}
         style={null}
       >
-        <View
-          style={
-            Object {
-              "marginBottom": 20,
-              "marginHorizontal": 20,
-            }
-          }
-        >
-          <Text
-            style={
-              Object {
-                "fontSize": 20,
-              }
-            }
-          >
-            Antony Maciel
-          </Text>
-          <View
-            accessible={true}
-            isTVSelectable={true}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "opacity": 1,
-              }
-            }
-          >
-            <Text
-              numberOfLines={5}
-              style={
-                Object {
-                  "color": "#696969",
-                  "fontSize": 15,
-                  "fontWeight": "500",
-                  "textDecorationLine": "none",
-                }
-              }
-            >
-              &^%$#@!
-            </Text>
-            <Text
-              style={
-                Object {
-                  "color": "#E91E63",
-                  "textAlign": "right",
-                  "textDecorationLine": "underline",
-                }
-              }
-            >
-              see 
-              more
-              ...
-            </Text>
-          </View>
-        </View>
+        <ReviewComponent
+          author="Antony Maciel"
+          content="&^%$#@!"
+          url="https://www.themoviedb.org/review/5d2ddc7d6a300b0011a469df"
+        />
       </View>
       <View
         onLayout={[Function]}

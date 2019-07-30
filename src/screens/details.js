@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Button, Image, Text } from "react-native";
-import { Rating } from 'react-native-elements';
+import Rating from '../components/rating';
 import styles from "../styles/details";
 import appStyles from "../styles";
 
@@ -25,13 +25,7 @@ class Details extends React.Component {
                         <View style={styles.ratingContainer}>
                             <Text>{vote_average}</Text>
                             <Rating
-                                imageSize={20}
-                                readonly
-                                ratingCount={5}
-                                fractions={1}
-                                startingValue={vote_average / 2}
-                                count={1}
-                                ratingColor='red'
+                                rating={vote_average}
                             />
                         </View>
                 </View>

@@ -7,7 +7,11 @@ export const movie = {
     urlbackdropImage: 'https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg', 
     generes: 'Aventure, Drama, Terror',  
     vote_count: '1200',
-    overview: 'Amazing movie' 
+    overview: 'Amazing movie',
+    backdrop_path: '/kqjL17yufvn9OVLyXYpvtyrFfak.jpg',
+    poster_path: '/kqjL17yufvn9OVLyXYpvtyrFfak.jpg',
+    genres: ['Adventure', 'Terror', 'Drama'],
+    release_date: '2016-5-14'
 }
 
 export const review = {
