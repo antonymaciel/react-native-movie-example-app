@@ -1,6 +1,6 @@
 import { MOVIES_SUCCESS, MOVIES_FAILD, MOVIES_LOADING } from '../constants/movies'
 
-const initialState = {
+export const initialState = {
     movies: null,
     totalPages: null,
     loading: false,

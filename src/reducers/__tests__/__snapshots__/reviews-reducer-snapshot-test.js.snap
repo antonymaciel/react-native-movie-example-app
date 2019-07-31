@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`handles error action 1`] = `
+Object {
+  "error": true,
+  "loading": false,
+  "reviews": null,
+  "totalPages": null,
+  "totalReviews": null,
+}
+`;
+
+exports[`handles load action 1`] = `
+Object {
+  "error": false,
+  "loading": true,
+  "reviews": null,
+  "totalPages": null,
+  "totalReviews": null,
+}
+`;
+
+exports[`handles success print action 1`] = `
+Object {
+  "error": false,
+  "loading": false,
+  "reviews": Array [
+    Object {
+      "author": "Antony Maciel",
+      "content": "Great Movie!!!",
+      "id": 1,
+      "url": "https://www.themoviedb.org/review/5d2ddc7d6a300b0011a469df",
+    },
+    Object {
+      "author": "Antony Maciel",
+      "content": "Great Movie!, always has amazing content 
+ I love this movie",
+      "id": 2,
+      "url": "https://www.themoviedb.org/review/5d2ddc7d6a300b0011a469df",
+    },
+    Object {
+      "author": "Antony Maciel",
+      "content": "&^%$#@!",
+      "id": 3,
+      "url": "https://www.themoviedb.org/review/5d2ddc7d6a300b0011a469df",
+    },
+  ],
+  "totalPages": 75,
+  "totalReviews": 15,
+}
+`;
+
+exports[`returns the same state on an unhandled action 1`] = `
+Object {
+  "error": false,
+  "loading": false,
+  "reviews": null,
+  "totalPages": null,
+  "totalReviews": null,
+}
+`;

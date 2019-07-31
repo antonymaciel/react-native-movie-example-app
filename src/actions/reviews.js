@@ -1,16 +1,16 @@
 import Api from "../api/apiMovies"
 import { REVIEWS_SUCCESS, REVIEWS_FAILD, REVIEWS_LOADING, REVIEWS_FINISH } from '../constants/reviews'
 
-const movieReviewsSuccess = (reviews) => ({
+export const movieReviewsSuccess = (reviews) => ({
     type: REVIEWS_SUCCESS,
     reviews
 });
 
-const movieReviewsFaild = () => ({
+export const movieReviewsFaild = () => ({
     type: REVIEWS_FAILD, 
 });
 
-const movieReviewsLoading = () => ({
+export const movieReviewsLoading = () => ({
     type: REVIEWS_LOADING,
 });
 
