@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should handle movies success action 1`] = `
+Array [
+  Object {
+    "type": "MOVIES_LOADING",
+  },
+  Object {
+    "movies": Array [
+      Object {
+        "title": "XMan",
+      },
+      Object {
+        "title": "Spiderman",
+      },
+    ],
+    "type": "MOVIES_SUCCESS",
+  },
+]
+`;

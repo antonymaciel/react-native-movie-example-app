@@ -1,16 +1,16 @@
 import Api from "../api/apiMovies"
 import { MOVIES_SUCCESS, MOVIES_FAILD, MOVIES_LOADING } from '../constants/movies'
 
-const moviesSuccess = (movies) => ({
+export const moviesSuccess = (movies) => ({
     type: MOVIES_SUCCESS,
     movies 
 });
 
-const moviesFaild = () => ({
+export const moviesFaild = () => ({
     type: MOVIES_FAILD, 
 });
 
-const moviesLoading = () => ({
+export const moviesLoading = () => ({
     type: MOVIES_LOADING,
 });
 

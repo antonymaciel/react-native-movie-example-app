@@ -1,7 +1,9 @@
 import { REVIEWS_SUCCESS, REVIEWS_FAILD, REVIEWS_LOADING, REVIEWS_FINISH } from '../constants/reviews'
 
-const initialState = {
+export const initialState = {
     reviews: null,
+    totalPages: null, 
+    totalReviews: null,
     loading: false,
     error: false
 }
