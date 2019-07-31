@@ -34,7 +34,7 @@ class Reviews extends React.Component {
                         ListHeaderComponent={() => <View />}
                         onEndReachedThreshold={0.2}
                         onEndReached={() => {
-                        if (!this.onEndReachedCalledDuringMomentum) {
+                        if (!this.onEndReachedCalledDuringMomentum & total_results > 8) {
                             onNewPage();
                             this.onEndReachedCalledDuringMomentum = true;
                         }

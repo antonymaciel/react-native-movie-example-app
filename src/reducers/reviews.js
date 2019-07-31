@@ -12,10 +12,11 @@ export const initialState = {
 const reviews = (state = initialState, action) => {
     switch(action.type){
         case REVIEWS_SUCCESS:
+            console.log(action.reviews);
             return {
                 reviews: state.reviews ? [...state.reviews.results, ...action.reviews.results] : action.reviews.results,
-                totalReviews: action.reviews.total_pages,
-                totalPages: action.reviews.total_results,
+                totalReviews: action.reviews.total_results,
+                totalPages: action.reviews.total_pages,
                 loading: false, 
                 error: false
             };
