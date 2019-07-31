@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`handles error action 1`] = `
+Object {
+  "error": true,
+  "loading": false,
+  "movieDetails": null,
+}
+`;
+
+exports[`handles load action 1`] = `
+Object {
+  "error": false,
+  "loading": true,
+  "movieDetails": null,
+}
+`;
+
+exports[`handles success action 1`] = `
+Object {
+  "error": false,
+  "loading": false,
+  "movieDetails": Object {
+    "movieDetails": Object {
+      "backdrop_path": "/kqjL17yufvn9OVLyXYpvtyrFfak.jpg",
+      "generes": "Aventure, Drama, Terror",
+      "genres": Array [
+        "Adventure",
+        "Terror",
+        "Drama",
+      ],
+      "id": 0,
+      "imageUrl": "https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg",
+      "overview": "Amazing movie",
+      "poster_path": "/kqjL17yufvn9OVLyXYpvtyrFfak.jpg",
+      "release_date": "2016-5-14",
+      "title": "Spiderman",
+      "urlbackdropImage": "https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg",
+      "vote_average": "9.1",
+      "vote_count": "1200",
+      "year": "2019",
+    },
+    "totalPages": 15,
+  },
+}
+`;
+
+exports[`returns the same state on an unhandled action 1`] = `
+Object {
+  "error": false,
+  "loading": false,
+  "movieDetails": null,
+}
+`;

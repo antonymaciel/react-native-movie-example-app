@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should handle details success action 1`] = `
+Array [
+  Object {
+    "type": "DETAILS_LOADING",
+  },
+  Object {
+    "movieDetails": Object {
+      "title": "Spiderman",
+    },
+    "type": "DETAILS_SUCCESS",
+  },
+]
+`;

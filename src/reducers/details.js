@@ -1,6 +1,6 @@
 import { DETAILS_SUCCESS, DETAILS_FAILD, DETAILS_LOADING, DETAILS_FINISH } from '../constants/details'
 
-const initialState = {
+export const initialState = {
     movieDetails: null,
     loading: false,
     error: false
