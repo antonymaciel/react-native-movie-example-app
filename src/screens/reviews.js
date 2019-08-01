@@ -10,7 +10,7 @@ class Reviews extends React.Component {
     }
 
     render() {
-        const { total_results, posterUrl, results, onNewPage } = this.props;
+        const { total_results, results, onNewPage } = this.props;
         return (
             <View style={appStyles.pageContainer}>
                 <View style={styles.headerContainer}>

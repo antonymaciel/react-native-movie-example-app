@@ -5,7 +5,6 @@ import ReviewsContainer from '../containers/reviewsContainer';
 
 
 const stackNavigatorConfig =  {     
-    //headerMode: 'none',
     headerBackTitleVisible: true,
     navigationOptions: {
        gesturesEnabled: true,

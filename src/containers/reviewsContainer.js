@@ -1,5 +1,5 @@
 import React from "react";
-import { Image } from "react-native";
+import { Image, View } from "react-native";
 import { connect } from "react-redux";
 import { IMAGES_BASE_URL, IMAGE_SIZE_POSTER } from "../constants/config";
 import Reviews from "../screens/reviews";
@@ -15,7 +15,13 @@ class ReviewsContainer extends React.Component {
       headerTitleStyle: styles.header,
       headerTintColor: 'black',
       headerTitleStyle: { color: 'black' },
-      headerRight: <Image style={[styles.imageHeader, styles.shadow]} resizeMode='contain' source={{uri:  IMAGES_BASE_URL + IMAGE_SIZE_POSTER + navigation.getParam('posterPath')}} />,
+      headerRight: ( 
+        <Image 
+          style={styles.imageHeader} 
+          resizeMode='contain' 
+          source={{uri:  IMAGES_BASE_URL + IMAGE_SIZE_POSTER + navigation.getParam('posterPath')}} 
+        />
+      )
   }};
 
   constructor(props) {

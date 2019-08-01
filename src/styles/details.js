@@ -38,14 +38,13 @@ const styles = StyleSheet.create({
         textTransform: 'uppercase'
     },
     generalInfo: {
-        flex: 1,
         left: posterWidth + 40,
         width: width - posterWidth - 50,
         marginTop: 23,
-        maxHeight: posterDownRange - 23
+        minHeight: posterDownRange - 23
     },
     descriptionAndButtonContainer: {
-        flex: 1,
+        flex: 1, 
         margin: 23
     },
     descriptionText: {
@@ -54,7 +53,6 @@ const styles = StyleSheet.create({
         color: '#696969'
     },
     ratingContainer: {
-        flex: 1,
         flexDirection: 'row',
         justifyContent: 'flex-start'
     },
@@ -98,12 +96,15 @@ const styles = StyleSheet.create({
     buttonContainer: {
         flex: 1,
         alignItems: 'center',
-        marginTop: 50,
+        marginTop: 50
     },
     buttonLabel: {
         color: 'white',
         fontSize: 20,
         fontWeight: 'bold'
+    },
+    starsContainer: {
+        flexDirection: 'row'
     }
 });
 
