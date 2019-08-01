@@ -2,7 +2,7 @@ import api from './apiService';
 
 class MoviesApi {
   static getMovies(page = 1) {
-    return api.get(`discover/movie?page=${page}`, true);
+    return api.get(`discover/movie?sort_by=popularity.desc&page=${page}`, true);
   }
 
   static getMovieDetails(movieId) {

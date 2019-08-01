@@ -1,5 +1,5 @@
 import React from "react";
-import { IMAGES_BASE_URL } from "../constants/config";
+import { IMAGES_BASE_URL, IMAGE_SIZE_POSTER } from "../constants/config";
 import MovieComponent from "../components/movieComponent"; 
 
 class MovieComponentContainer extends React.Component {
@@ -7,17 +7,24 @@ class MovieComponentContainer extends React.Component {
         super(props);
         this.state = {
             year: null,
-            url: null
+            url: null,
+            averageNumber: null,
+            averageDecimal: null
         };
     }
 
     static getDerivedStateFromProps(props){
         const { movie } = props;
         const [year, , ] = movie.release_date.split('-');
-        const url = IMAGES_BASE_URL + movie.poster_path;
+        const url = IMAGES_BASE_URL + IMAGE_SIZE_POSTER + movie.poster_path;
+        const vote_average = movie.vote_average;
+        let [averageNumber, averageDecimal] = vote_average.toString().split('.');
+        averageDecimal = averageDecimal == null ? 0 : averageDecimal; 
         return {
             year,
-            url
+            url,
+            averageNumber,
+            averageDecimal
         };
     }
 
@@ -29,14 +36,15 @@ class MovieComponentContainer extends React.Component {
     }
 
     render() {
-        const { year, url } = this.state;
-        const { title, vote_average } = this.props.movie;
+        const { year, url, averageNumber, averageDecimal } = this.state;
+        const { title } = this.props.movie;
         return (
             <MovieComponent
                 year={year}
                 imageUrl={url}
-                title={title} 
-                vote_average={vote_average}
+                title={title}
+                averageNumber={averageNumber}
+                averageDecimal={averageDecimal}
                 onClick={() => this.onClickMovie()}
             />
         );
