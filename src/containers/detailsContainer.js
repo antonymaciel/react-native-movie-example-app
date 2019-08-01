@@ -1,5 +1,4 @@
 import React from "react";
-import  { Button } from "react-native";
 import { connect } from "react-redux";
 import Details from "../screens/details";
 import { getMovieDetails, movieDetailsFinish } from "../actions/details";

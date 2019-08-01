@@ -1,6 +1,6 @@
 import movies from '../movies';
 import { initialState } from '../movies';
-import { moviesLoading, moviesFaild, moviesSuccess } from '../../actions/movies';
+import { moviesLoading, moviesFaild, moviesClean, moviesSuccess } from '../../actions/movies';
 import { movies as data } from '../../../config/jest/mockData';
 
 it('returns the same state on an unhandled action', () => {
@@ -13,6 +13,12 @@ it('handles load action', () => {
 
 it('handles error action', () => {
   expect(movies(initialState, moviesFaild())).toMatchSnapshot();
+});
+
+it('handles clear action', () => {
+  expect(movies(initialState, moviesClean())).toEqual({
+    ...initialState,
+   });;
 });
 
 it('handles success print action', () => {

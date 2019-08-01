@@ -1,7 +1,7 @@
 import React from "react";
 import { View, TouchableOpacity, Image, Text } from "react-native";
 import { LinearGradient } from 'expo';
-import Rating from '../components/rating';
+import { Ionicons } from '@expo/vector-icons';
 import styles from "../styles/details";
 import appStyles from "../styles";
 
@@ -11,7 +11,8 @@ class Details extends React.Component {
     }
 
     render() {
-        const {urlbackdropImage, urlposterImage, generes, title, vote_count, averageNumber, averageDecimal, vote_average, overview, goToReviews } = this.props;
+        const {urlbackdropImage, urlposterImage, generes, title, vote_count, vote_average, averageNumber, averageDecimal, overview, goToReviews } = this.props;
+        const startsCount = vote_average/2;
         return (
             <View style={appStyles.pageContainer}>
                 <View>
@@ -34,9 +35,13 @@ class Details extends React.Component {
                             <Text style={styles.averageText}>{averageNumber}</Text>
                             <Text style={styles.averageDecimal}>.{averageDecimal}</Text>
                         </View>
-                        <Rating
-                            rating={vote_average}
-                        />
+                        <View style={styles.starsContainer}>
+                            <Ionicons key={0} name="md-star" size={25} color={(startsCount >= 1) ? "rgb(210, 54, 100)" : "rgb(210, 210, 210)"} />
+                            <Ionicons key={1} name="md-star" size={25} color={(startsCount >= 2) ? "rgb(210, 54, 100)" : "rgb(210, 210, 210)"} />
+                            <Ionicons key={2} name="md-star" size={25} color={(startsCount >= 3) ? "rgb(210, 54, 100)" : "rgb(210, 210, 210)"} />
+                            <Ionicons key={3} name="md-star" size={25} color={(startsCount >= 4) ? "rgb(210, 54, 100)" : "rgb(210, 210, 210)"} />
+                            <Ionicons key={4} name="md-star" size={25} color={(startsCount == 5) ? "rgb(210, 54, 100)" : "rgb(210, 210, 210)"} />
+                        </View>
                     </View>
                 </View>
                 <View style={styles.descriptionAndButtonContainer}>
