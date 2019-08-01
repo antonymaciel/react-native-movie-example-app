@@ -20,43 +20,6 @@ class Api {
     return Api.performRequest(endpoint, requestData, hasQueryString);
   }
 
-  static post(endpoint, data, contentType) {
-    const requestData = {
-      method: 'post',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': contentType,
-        // 'Content-Type': 'application/json', 'multipart/form-data'
-      },
-      body: data,
-    };
-    return Api.performRequest(endpoint, requestData);
-  }
-
-  static put(endpoint, data) {
-    const requestData = {
-      method: 'put',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    };
-    return Api.performRequest(endpoint, requestData);
-  }
-
-  static delete(endpoint, data) {
-    const requestData = {
-      method: 'delete',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    };
-    return Api.performRequest(endpoint, requestData);
-  }
-  
 }
 
 export default Api;
