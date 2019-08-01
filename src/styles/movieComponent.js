@@ -14,20 +14,22 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         width: itemWidth,
         height: itemHeight,
-        backgroundColor: 'black'
     },
     averageContainer: {
         position: 'absolute',
+        flex: 1,
         right: 0,
         marginRight: 25,
         marginTop: 25,
-        backgroundColor: 'orange',
         borderRadius: 100,
-        padding:7
+        width: 30,
+        height: 30,
+        alignItems: 'center',
+        justifyContent:'center'
     },
     averageText: {
         color: 'white',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
     },
     titleContainer: {
         marginBottom: 20,
@@ -44,6 +46,11 @@ const styles = StyleSheet.create({
     date: {
         color: 'white'
     },
+    gradient: {
+        flex: 1,
+        zIndex: 300,
+        position:'absolute'
+    }
 });
 
 
