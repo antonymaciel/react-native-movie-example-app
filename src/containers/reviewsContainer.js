@@ -1,7 +1,7 @@
 import React from "react";
-import { Button } from "react-native";
+import { Image } from "react-native";
 import { connect } from "react-redux";
-import { IMAGES_BASE_URL } from "../constants/config";
+import { IMAGES_BASE_URL, IMAGE_SIZE_POSTER } from "../constants/config";
 import Reviews from "../screens/reviews";
 import styles from "../styles";
 import { getMovieReviews, movieReviewsFinish } from "../actions/reviews";
@@ -9,21 +9,14 @@ import Loading from "../components/loading"
 import Error from "../components/error"
 
 class ReviewsContainer extends React.Component {
-  static navigationOptions = ({ navigation }) => {
-    return {
-      headerLeft: (
-        <Button
-          onPress={() => {
-            navigation.goBack();
-          }}
-          title="Go Back"
-          color="blue"
-        />
-      ),
-      headerStyle: styles.backroundColorApp,
+  static navigationOptions = ({navigation}) => {
+    return{
+      headerStyle: [styles.backroundColorApp, styles.headerContainer],
       headerTitleStyle: styles.header,
-    };
-  };
+      headerTintColor: 'black',
+      headerTitleStyle: { color: 'black' },
+      headerRight: <Image style={[styles.imageHeader, styles.shadow]} resizeMode='contain' source={{uri:  IMAGES_BASE_URL + IMAGE_SIZE_POSTER + navigation.getParam('posterPath')}} />,
+  }};
 
   constructor(props) {
     super(props);
@@ -36,7 +29,7 @@ class ReviewsContainer extends React.Component {
 
   static getDerivedStateFromProps(props){
     const videoId = props.navigation.getParam('videoId');
-    const posterUrl = IMAGES_BASE_URL + props.navigation.getParam('posterPath');
+    const posterUrl = IMAGES_BASE_URL + IMAGE_SIZE_POSTER + props.navigation.getParam('posterPath');
     return {
       videoId,
       posterUrl

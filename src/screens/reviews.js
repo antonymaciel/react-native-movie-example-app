@@ -1,5 +1,5 @@
 import React from "react";
-import { View, FlatList, Image, Text, RefreshControl } from "react-native"
+import { View, FlatList, Text } from "react-native"
 import appStyles from "../styles";
 import styles from "../styles/reviews";
 import ReviewComponent from  "../components/reviewComponent"
@@ -15,7 +15,6 @@ class Reviews extends React.Component {
             <View style={appStyles.pageContainer}>
                 <View style={styles.headerContainer}>
                     <Text style={styles.title}>Reviews ({total_results})</Text>
-                    <Image style={styles.image} resizeMode='contain' source={{uri: posterUrl}} />
                 </View>
                     <FlatList
                         style={styles.reviewList}

@@ -10,8 +10,10 @@ class HomeContainer extends React.Component {
 
   static navigationOptions = {
     title: 'MOVIES',
-    headerStyle: styles.backroundColorApp,
+    headerStyle: [styles.backroundColorApp, styles.headerContainer],
     headerTitleStyle: styles.header,
+    headerBackTitle: 'Back',
+    headerBackTitleStyle: {color: 'white'}
   };
 
   constructor(props) {

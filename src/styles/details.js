@@ -1,5 +1,5 @@
-import { StyleSheet, Dimensions } from 'react-native';
-
+import { StyleSheet, Dimensions, Platform } from 'react-native';
+import generalStyles from './index'
 const {height, width} = Dimensions.get('window');
 const posterWidth = height / (2.5 * 1.5 * 1.5);
 const backdropImageHeight = height / 2.5;
@@ -12,16 +12,19 @@ const styles = StyleSheet.create({
     },
     backdropImage: {
         height: backdropImageHeight,
-        width,
-        backgroundColor: 'black'
+        width
     },
     posterImage: {
         height: posterHeight,
         width: posterWidth,
+        borderRadius: 4
+    },
+    posterImageContainer: {
         position: 'absolute',
         bottom: -posterDownRange,
         marginLeft: 20,
-        backgroundColor: 'black'
+        zIndex: 200,
+        ...generalStyles.shadow
     },
     title: {
         position: 'absolute',
@@ -41,10 +44,6 @@ const styles = StyleSheet.create({
         marginTop: 23,
         maxHeight: posterDownRange - 23
     },
-    generalInfoInner: {
-        flex: 1,
-        position: 'relative'
-    },
     descriptionAndButtonContainer: {
         flex: 1,
         margin: 23
@@ -56,17 +55,55 @@ const styles = StyleSheet.create({
     },
     ratingContainer: {
         flex: 1,
-        flexDirection: 'row'
-    },
-    rating: {
-        alignSelf: 'center'
+        flexDirection: 'row',
+        justifyContent: 'flex-start'
     },
     votesCount: {
         fontWeight: 'bold'
     },
     infoText: {
-        fontWeight: '300',
+        fontWeight: '400',
         color: 'black'
+    },
+    gradient: {
+        flex: 1,
+        zIndex: 100,
+        position:'absolute'
+    },
+    averageContainer: {
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        marginRight: 10
+    },
+    averageText: {
+        color: 'rgb(210, 54, 100)',
+        fontWeight: 'bold',
+        fontSize: 20
+    },
+    averageDecimal: {
+        color: 'rgb(210, 54, 100)',
+        fontSize: 15
+    },
+    buttonGradient: {
+        flex: 1,
+        position: 'absolute',
+        paddingHorizontal: 25,
+        paddingVertical: 10,
+        borderRadius: 50,
+        width: 200,
+        height: 50,
+        alignItems: 'center',
+        justifyContent:'center',
+    },
+    buttonContainer: {
+        flex: 1,
+        alignItems: 'center',
+        marginTop: 50,
+    },
+    buttonLabel: {
+        color: 'white',
+        fontSize: 20,
+        fontWeight: 'bold'
     }
 });
 
