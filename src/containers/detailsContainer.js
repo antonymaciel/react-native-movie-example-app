@@ -1,30 +1,23 @@
 import React from "react";
-import  { Button, StyleSheet, View } from "react-native";
+import  { Button } from "react-native";
 import { connect } from "react-redux";
 import Details from "../screens/details";
 import { getMovieDetails, movieDetailsFinish } from "../actions/details";
 import styles from "../styles/details";
 import Loading from "../components/loading"
 import Error from "../components/error"
-import { IMAGES_BASE_URL } from "../constants/config"
+import { IMAGES_BASE_URL, IMAGE_SIZE_BACKDROP, IMAGE_SIZE_POSTER } from "../constants/config"
 
 class DetailsContainer extends React.Component {
 
-  static navigationOptions = ({ navigation }) => {
-    return {
+  static navigationOptions = {
     headerMode: 'none',
     headerTransparent: true,
     headerStyle: styles.headerStyle,
-    headerLeft: (
-      <Button
-        onPress={() => {
-          navigation.goBack();
-        }}
-        title="Go Back"
-        color="blue"
-      />
-    ),
-  }}
+    headerBackTitle: 'Back',
+    headerTintColor: 'white',
+    headerTitleStyle: { color: 'white' }
+  }
 
   constructor(props) {
     super(props);
@@ -32,7 +25,9 @@ class DetailsContainer extends React.Component {
       videoId: null,
       urlbackdropImage: null,
       urlposterImage: null,
-      generes: null
+      generes: null,
+      averageNumber: null,
+      averageDecimal: null
     }
   }
 
@@ -40,17 +35,22 @@ class DetailsContainer extends React.Component {
     const { movieDetails } = props.movieDetails;
     const videoId = props.navigation.getParam('videoId');
     if (movieDetails) {
-      const urlbackdropImage = IMAGES_BASE_URL + movieDetails.backdrop_path;
-      const urlposterImage = IMAGES_BASE_URL + movieDetails.poster_path;
+      const urlbackdropImage = IMAGES_BASE_URL + IMAGE_SIZE_BACKDROP + movieDetails.backdrop_path;
+      const urlposterImage = IMAGES_BASE_URL + IMAGE_SIZE_POSTER + movieDetails.poster_path;
       let generes;
       movieDetails.genres.forEach((genere) => {
           generes = generes ? generes + ", " + genere.name : genere.name;
-      })
+      });
+      const vote_average = movieDetails.vote_average;
+      let [averageNumber, averageDecimal] = vote_average.toString().split('.');
+      averageDecimal = averageDecimal == null ? 0 : averageDecimal; 
       return {
         urlbackdropImage,
         urlposterImage,
         generes,
-        videoId
+        videoId,
+        averageNumber,
+        averageDecimal
       }
     }
     return {
@@ -75,8 +75,8 @@ class DetailsContainer extends React.Component {
   render() {
     const { movieDetails, loading } = this.props.movieDetails;
     if (movieDetails) {
-      const { urlbackdropImage, urlposterImage , generes } = this.state;
-      const { title, vote_count, vote_average, overview } = movieDetails;
+      const { urlbackdropImage, urlposterImage , generes, averageNumber, averageDecimal } = this.state;
+      const { title, vote_count, overview, vote_average } = movieDetails;
       return ( 
         <Details
           urlbackdropImage={urlbackdropImage}
@@ -84,6 +84,8 @@ class DetailsContainer extends React.Component {
           generes={generes}
           title={title}
           vote_count={vote_count}
+          averageNumber={averageNumber}
+          averageDecimal={averageDecimal}
           vote_average={vote_average}
           overview={overview}
           goToReviews={() => this.goToReviews()}

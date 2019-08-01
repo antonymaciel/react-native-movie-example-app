@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, Image, TouchableOpacity, View } from "react-native"
-import { LinearGradient } from 'expo'
+import { LinearGradient } from 'expo';
 import styles from "../styles/movieComponent";
 
 class MovieComponent extends React.Component {
@@ -9,7 +9,7 @@ class MovieComponent extends React.Component {
     }
 
     render() {
-        const { year, imageUrl, title, vote_average } = this.props;
+        const { year, imageUrl, title, averageNumber, averageDecimal } = this.props;
         return (
             <TouchableOpacity style={styles.movieContainer} onPress={() => this.props.onClick()}>
                 <LinearGradient
@@ -18,15 +18,17 @@ class MovieComponent extends React.Component {
                 >
                     <LinearGradient
                         colors={['rgb(235, 136, 0)', 'rgb(210, 54, 100)']}
-                        style={styles.averageContainer}
+                        style={styles.averageGradient}
                     >
-                        <Text style={styles.averageText}>{vote_average}</Text>
+                        <View style={styles.averageContainer}>
+                            <Text style={styles.averageText}>{averageNumber}</Text>
+                            <Text style={styles.averageDecimal}>.{averageDecimal}</Text>
+                        </View>
                     </LinearGradient>
                     <View style={styles.titleContainer}>
                         <Text style={styles.date} >{year}</Text>
                         <Text style={styles.titleText} >{title}</Text>
                     </View>
-            
                 </LinearGradient>
                 <Image style={[styles.image]} resizeMode="cover" source={{uri: imageUrl}}/> 
                 
