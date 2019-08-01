@@ -1,4 +1,4 @@
-import { MOVIES_SUCCESS, MOVIES_FAILD, MOVIES_LOADING } from '../constants/movies'
+import { MOVIES_SUCCESS, MOVIES_FAILD, MOVIES_LOADING, MOVIES_CLEAN } from '../constants/movies'
 
 export const initialState = {
     movies: null,
@@ -30,6 +30,8 @@ const movies = (state = initialState, action) => {
                 loading: false, 
                 error: true
             };
+        case MOVIES_CLEAN:
+            return initialState;
         default:
                 return state;
     } 

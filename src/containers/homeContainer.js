@@ -33,6 +33,11 @@ class HomeContainer extends React.Component {
     }
   }
 
+  onRefresh(){
+    this.props.getMovies(1);
+    this.setState({page: 1});
+  }
+
   render() {
     const { movies, loading } = this.props.movies;
     if (movies) {
@@ -41,6 +46,8 @@ class HomeContainer extends React.Component {
           navigation = {this.props.navigation}
           movies={movies}
           onNewPage={() => this.onNewPage()} 
+          loading
+          onRefresh ={() => this.onRefresh()}
         />
       )
     } else if(loading) {

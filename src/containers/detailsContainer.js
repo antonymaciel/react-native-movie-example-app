@@ -1,5 +1,5 @@
 import React from "react";
-import  { Button } from "react-native";
+import  { Button, StyleSheet, View } from "react-native";
 import { connect } from "react-redux";
 import Details from "../screens/details";
 import { getMovieDetails, movieDetailsFinish } from "../actions/details";
@@ -90,7 +90,9 @@ class DetailsContainer extends React.Component {
         />
       ); 
     } else if (loading) {
-      return <Loading />      
+      return ( 
+        <Loading />
+      )  
     } else {
       return <Error />
     }
