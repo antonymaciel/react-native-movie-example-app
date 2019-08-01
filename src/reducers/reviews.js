@@ -12,7 +12,6 @@ export const initialState = {
 const reviews = (state = initialState, action) => {
     switch(action.type){
         case REVIEWS_SUCCESS:
-            console.log(action.reviews);
             return {
                 reviews: state.reviews ? [...state.reviews.results, ...action.reviews.results] : action.reviews.results,
                 totalReviews: action.reviews.total_results,

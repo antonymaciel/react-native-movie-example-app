@@ -2,6 +2,7 @@ import React from "react";
 import { View, FlatList, RefreshControl } from "react-native"
 import styles from "../styles";
 import { NUM_COLUMS } from '../constants/other';
+import Loading from "../components/loading"
 import MovieComponentContainer from '../containers/movieComponentContainer'
 
 class Home extends React.Component {
@@ -10,7 +11,7 @@ class Home extends React.Component {
     }
 
     render() {
-        const { movies, navigation } = this.props;
+        const { movies, navigation, loading, onRefresh} = this.props;
         return (
             <View style={styles.pageContainer}> 
                  <FlatList
@@ -18,7 +19,7 @@ class Home extends React.Component {
                     refreshControl={
                       <RefreshControl
                         refreshing={false}
-                        onRefresh={() => console.log('pending')}
+                        onRefresh={() => onRefresh()}
                       />
                     }
                     numColumns={NUM_COLUMS}
@@ -27,7 +28,7 @@ class Home extends React.Component {
                       <MovieComponentContainer navigation={navigation} movie={item} />}
                     keyExtractor={item => item.id.toString()}
                     ItemSeparatorComponent={() => <View />}
-                    ListFooterComponent={() => <View />}
+                    ListFooterComponent={() => (loading && <Loading />)}
                     ListHeaderComponent={() => <View />}
                     onEndReachedThreshold={0.2}
                     onEndReached={() => {

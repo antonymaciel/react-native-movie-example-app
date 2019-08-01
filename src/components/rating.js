@@ -1,6 +1,5 @@
 import React from "react";
 import { Text, Image, TouchableOpacity, View } from "react-native"
-import styles from "../styles/rating";
 
 class Rating extends React.Component {
     constructor(props){
