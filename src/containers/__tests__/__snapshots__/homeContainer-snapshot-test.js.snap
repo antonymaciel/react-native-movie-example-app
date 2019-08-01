@@ -2,6 +2,7 @@
 
 exports[`renders home container using Snapshots 1`] = `
 <Home
+  loading={true}
   movies={
     Array [
       Object {
@@ -36,13 +37,27 @@ exports[`renders home container using Snapshots 1`] = `
     }
   }
   onNewPage={[Function]}
+  onRefresh={[Function]}
 />
 `;
 
 exports[`renders home container using Snapshots 2`] = `
-<Text>
-  Loading...
-</Text>
+<View
+  style={
+    Object {
+      "flex": 1,
+      "flexDirection": "column",
+      "justifyContent": "center",
+    }
+  }
+>
+  <ActivityIndicator
+    animating={true}
+    color="#db4f48"
+    hidesWhenStopped={true}
+    size="large"
+  />
+</View>
 `;
 
 exports[`renders home container using Snapshots 3`] = `

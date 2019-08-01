@@ -3,7 +3,7 @@
 exports[`renders reviews container using Snapshots 1`] = `
 <Reviews
   onNewPage={[Function]}
-  posterUrl="https://image.tmdb.org/t/p/w300undefined"
+  posterUrl="https://image.tmdb.org/t/p/w185undefined"
   results={
     Array [
       Object {
@@ -32,9 +32,22 @@ exports[`renders reviews container using Snapshots 1`] = `
 `;
 
 exports[`renders reviews container using Snapshots 2`] = `
-<Text>
-  Loading...
-</Text>
+<View
+  style={
+    Object {
+      "flex": 1,
+      "flexDirection": "column",
+      "justifyContent": "center",
+    }
+  }
+>
+  <ActivityIndicator
+    animating={true}
+    color="#db4f48"
+    hidesWhenStopped={true}
+    size="large"
+  />
+</View>
 `;
 
 exports[`renders reviews container using Snapshots 3`] = `

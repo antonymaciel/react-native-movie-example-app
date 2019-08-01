@@ -3,6 +3,9 @@
 exports[`should handle movies success action 1`] = `
 Array [
   Object {
+    "type": "MOVIES_CLEAN",
+  },
+  Object {
     "type": "MOVIES_LOADING",
   },
   Object {

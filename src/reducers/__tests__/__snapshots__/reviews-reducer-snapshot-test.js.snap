@@ -45,8 +45,8 @@ Object {
       "url": "https://www.themoviedb.org/review/5d2ddc7d6a300b0011a469df",
     },
   ],
-  "totalPages": 75,
-  "totalReviews": 15,
+  "totalPages": 15,
+  "totalReviews": 75,
 }
 `;
 
