@@ -2,20 +2,35 @@
 
 exports[`renders details container using Snapshots 1`] = `
 <Details
+  averageDecimal="1"
+  averageNumber="9"
   goToReviews={[Function]}
   overview="Amazing movie"
   title="Spiderman"
-  urlbackdropImage="https://image.tmdb.org/t/p/w300/kqjL17yufvn9OVLyXYpvtyrFfak.jpg"
-  urlposterImage="https://image.tmdb.org/t/p/w300/kqjL17yufvn9OVLyXYpvtyrFfak.jpg"
+  urlbackdropImage="https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg"
+  urlposterImage="https://image.tmdb.org/t/p/w185/kqjL17yufvn9OVLyXYpvtyrFfak.jpg"
   vote_average="9.1"
   vote_count="1200"
 />
 `;
 
 exports[`renders details container using Snapshots 2`] = `
-<Text>
-  Loading...
-</Text>
+<View
+  style={
+    Object {
+      "flex": 1,
+      "flexDirection": "column",
+      "justifyContent": "center",
+    }
+  }
+>
+  <ActivityIndicator
+    animating={true}
+    color="#db4f48"
+    hidesWhenStopped={true}
+    size="large"
+  />
+</View>
 `;
 
 exports[`renders details container using Snapshots 3`] = `
